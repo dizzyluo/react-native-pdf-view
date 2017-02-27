@@ -7,17 +7,17 @@
 //
 
 #import <React/RCTEventDispatcher.h>
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 
 @class RCTEventDispatcher;
 
 @interface RNPDFView : UIView
 
-@property(nonatomic, strong) NSString *src;
-@property(nonatomic, strong) NSString *path;
-@property(nonatomic, strong) NSNumber *pageNumber;
-@property(nonatomic, strong) NSNumber *zoom;
+@property (nonatomic, strong) NSString *src;
+@property (nonatomic, strong) NSString *path;
+@property (nonatomic, strong) NSNumber *pageNumber;
+@property (nonatomic, strong) NSNumber *zoom;
 
-@property(nonatomic, copy) RCTBubblingEventBlock onChange;
+@property (nonatomic, copy) RCTBubblingEventBlock onChange;
 
 @end

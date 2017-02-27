@@ -11,7 +11,7 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventDispatcher.h>
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 #import <React/RCTLog.h>
 
 #import "TiledPDFView.h"
@@ -59,8 +59,11 @@
     NSLog(@"not null: %@", self.path);
   
     NSURL *pdfURL = [NSURL fileURLWithPath:self.path];
+      RCTLog(@"Path: %@", pdfURL.absoluteString);
     _pdf = CGPDFDocumentCreateWithURL( (__bridge CFURLRef) pdfURL );
+      RCTLog(@"PDF %@", _pdf);
     _numberOfPages = (int)CGPDFDocumentGetNumberOfPages( _pdf );
+      RCTLog(@"Number of Pages: %i", _numberOfPages);
 
     if (self.pageNumber != nil && [self.pageNumber intValue] <= _numberOfPages) {
       _page = CGPDFDocumentGetPage( _pdf, [self.pageNumber unsignedIntValue] );
